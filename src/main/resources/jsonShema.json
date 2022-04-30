@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": [],
+  "examples": [
+    [
+      {
+        "r030": 36,
+        "txt": "Австралійський долар",
+        "rate": 21.4792,
+        "cc": "AUD",
+        "exchangedate": "07.05.2021"
+      },
+      {
+        "r030": 124,
+        "txt": "Канадський долар",
+        "rate": 22.6475,
+        "cc": "CAD",
+        "exchangedate": "07.05.2021"
+      }
+    ]
+  ],
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "$id": "#/items/anyOf/0",
+        "type": "object",
+        "title": "The first anyOf schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "r030": 36,
+            "txt": "Австралійський долар",
+            "rate": 21.4792,
+            "cc": "AUD",
+            "exchangedate": "07.05.2021"
+          }
+        ],
+        "required": [
+          "r030",
+          "txt",
+          "rate",
+          "cc",
+          "exchangedate"
+        ],
+        "properties": {
+          "r030": {
+            "$id": "#/items/anyOf/0/properties/r030",
+            "type": "integer",
+            "title": "The r030 schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              36
+            ]
+          },
+          "txt": {
+            "$id": "#/items/anyOf/0/properties/txt",
+            "type": "string",
+            "title": "The txt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Австралійський долар"
+            ]
+          },
+          "rate": {
+            "$id": "#/items/anyOf/0/properties/rate",
+            "type": "number",
+            "title": "The rate schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0.0,
+            "examples": [
+              21.4792
+            ]
+          },
+          "cc": {
+            "$id": "#/items/anyOf/0/properties/cc",
+            "type": "string",
+            "title": "The cc schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "AUD"
+            ]
+          },
+          "exchangedate": {
+            "$id": "#/items/anyOf/0/properties/exchangedate",
+            "type": "string",
+            "title": "The exchangedate schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "07.05.2021"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    ]
+  }
+}
